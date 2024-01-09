@@ -29,7 +29,7 @@ const SignupComponent = () => {
             // Store the token in local storage
             localStorage.setItem('token', response.data.token);
 
-            navigate('/login')
+            navigate('/')
     
             // Handle the token as needed, e.g., redirect user, etc.
     
