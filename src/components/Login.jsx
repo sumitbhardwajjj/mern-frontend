@@ -23,7 +23,7 @@ const SignupComponent = () => {
         e.preventDefault();
     
         try {
-            const response = await axios.post('https://mern-backend-6o5r.onrender.com/login', formData);
+            const response = await axios.post('https://mern-backend-6o5r.onrender.com/signup/login', formData);
             console.log(response.data.token);
            
             if(response.data==="not"){
