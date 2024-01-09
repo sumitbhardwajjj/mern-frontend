@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios';
 import '../style/Signup.css'
 
@@ -49,6 +49,9 @@ const SignupComponent = () => {
 
     return (
         <div>
+            <div>
+               <Link to='/add'><button>Add Products</button></Link>
+            </div>
             <form onSubmit={handleSubmit}>
                 <h4>Login</h4>
                 <input 
@@ -67,6 +70,7 @@ const SignupComponent = () => {
                     onChange={handleChange} 
                     required 
                 />
+               <Link to='/signup'><p>Create new account</p></Link>
                 <button className='Button' type="submit">Signup</button>
             </form>
           
