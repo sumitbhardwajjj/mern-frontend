@@ -24,8 +24,6 @@ const SignupComponent = () => {
     
         try {
             const response = await axios.post('https://mern-backend-6o5r.onrender.com/signup', formData);
-            console.log(response.data.token);
-    
             // Store the token in local storage
             localStorage.setItem('token', response.data.token);
 
