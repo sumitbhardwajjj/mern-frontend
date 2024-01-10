@@ -4,16 +4,6 @@ import '../style/Addproduct.css'
 // axios.defaults.headers.common["Authorization"] =
 //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkR1bW15QGdtYWlsLmNvbSIsImlhdCI6MTcwMzg2MzMxMn0.t-lW-rpAXcUIVmGLDPnmGx7uOvV4IZ1lR1P0UuN4iiw";
 
-const fetchProducts = async (url) => {
-  const token = localStorage.getItem('token');
-  const response = await axios.post(url, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
-  return response.data;
-};
-
 
 const Addproduct = () => {
   const [product, setProduct] = useState({
@@ -31,9 +21,14 @@ const Addproduct = () => {
     addProducts(product);
   };
 
-  const addProducts =  async (productData) => {
+  const addProducts = async (productData) => {
     try {
-      const res = await fetchProducts('https://mern-backend-6o5r.onrender.com/products', productData);
+      const res = await axios.post('https://mern-backend-6o5r.onrender.com/products', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      },productData);
+      const token = localStorage.getItem('token');
       console.log(res.data);
       // Optionally update the state or show a success message
     } catch (error) {
