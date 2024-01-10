@@ -23,7 +23,12 @@ const Addproduct = () => {
 
   const addProducts = async (productData) => {
     try {
-      const res = await axios.post('https://mern-backend-6o5r.onrender.com/products', productData);
+      const res = await axios.post('https://mern-backend-6o5r.onrender.com/products', productData,{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      const token = localStorage.getItem('token');
       console.log(res.data);
       // Optionally update the state or show a success message
     } catch (error) {

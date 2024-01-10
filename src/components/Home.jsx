@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import axios from "axios";
 
@@ -90,6 +91,9 @@ const handleSort = async (e) => {
         <option value="2">title low to high</option>
         <option value="-2">title high to low</option>
       </select>
+      <div>
+           <Link to='/add'><button>Add Products</button></Link>
+            </div>
       <div className="container">
         {products.map((item) => (
           <div className="product-card" key={item._id}>

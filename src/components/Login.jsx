@@ -48,10 +48,7 @@ const SignupComponent = () => {
     
 
     return (
-        <div>
-            <div>
-               <Link to='/add'><button>Add Products</button></Link>
-            </div>
+        <div>       
             <form onSubmit={handleSubmit}>
                 <h4>Login</h4>
                 <input 
