@@ -1,10 +1,29 @@
 
     body {
     font-family: sans-serif;
-   ;
-    background-color: cornflowerblue;
 }
 
+.wrapper{
+    display: flex;
+}
+
+.slidebar {
+    padding: 10px;
+    border-right: 1px solid gray;
+  }
+  
+  select {
+    margin-right: 10px;
+    padding: 8px;
+    font-size: 14px;
+  }
+   .slidebar button{
+    width: 140px;
+    margin-top: 20px;
+    text-decoration: none;
+   }
+  /* Add additional styling as needed */
+  
 .container {
     margin: 0px auto 0px auto;
     text-align: center;
@@ -66,4 +85,14 @@
 .add-to-cart-btn:hover,
 .view-btn:hover { 
     opacity: 0.8;
+}
+
+@media(max-width:600px){
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .slidebar{
+        height: 50px;
+    }
 }

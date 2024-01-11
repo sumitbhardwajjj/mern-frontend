@@ -1,0 +1,48 @@
+
+.nav{
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #121212;
+    color: white;
+}
+
+.nav-1{
+    font-weight: 600;
+}
+
+h3 span{
+    color:rgb(255, 251, 0);
+}
+:link{
+    text-decoration: none;
+}
+
+.nav-8{
+    color: white;
+}
+
+.nav-8:hover{
+    
+    color: greenyellow;
+}
+
+.nav-8.active{
+    color: rgb(255, 153, 0);
+}
+
+#icon{
+    height: 40px;
+    width: 40px;
+}
+
+.nav h4{
+    color: white;
+}
+
+@media(max-width:600px){
+    .nav{
+        flex-direction: column;
+    }
+}

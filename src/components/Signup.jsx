@@ -40,7 +40,7 @@ const SignupComponent = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h4>Sign up</h4>
+                <h3>Sign up</h3>
                 <input 
                     type="email" 
                     name="email" 

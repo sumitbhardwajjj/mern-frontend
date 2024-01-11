@@ -18,6 +18,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: rgb(156, 153, 153);
 }
 
 /* Style for form inputs */

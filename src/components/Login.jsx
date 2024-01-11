@@ -50,7 +50,7 @@ const SignupComponent = () => {
     return (
         <div>       
             <form onSubmit={handleSubmit}>
-                <h4>Login</h4>
+                <h3>Login</h3>
                 <input 
                     type="email" 
                     name="email" 
@@ -67,10 +67,9 @@ const SignupComponent = () => {
                     onChange={handleChange} 
                     required 
                 />
-               <Link to='/signup'><p>Create new account</p></Link>
-                <button className='Button' type="submit">Signup</button>
-            </form>
-          
+               <Link className='lin' to='/signup'><div>New user ? <span>Register</span></div></Link>
+                <button className='Button' type="submit">Login</button>
+            </form> 
         </div>
     );
 };
