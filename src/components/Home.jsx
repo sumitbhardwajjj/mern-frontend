@@ -4,15 +4,19 @@ import Navbar from "./Navbar";
 import "../style/Home.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { addToCart } from "./CartSlice";
+import { addToCart,toggleDarkMode } from "./CartSlice";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-// axios.defaults.baseURL = "http://localhost:8080";
-// axios.defaults.headers.common["Authorization"] =
-//   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkR1bW15QGdtYWlsLmNvbSIsImlhdCI6MTcwMzg2MzMxMn0.t-lW-rpAXcUIVmGLDPnmGx7uOvV4IZ1lR1P0UuN4iiw";
 
-const Home = () => {
-           
+const Home = ({darkMode}) => {
+
        const dispatch = useDispatch()
+
+       const toogle = ()=>{
+        dispatch(toggleDarkMode())
+      }
+    
 
   const [products, setProducts] = useState([]);
 
@@ -28,18 +32,18 @@ const Home = () => {
   };
 
   // Delete a product by ID
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`https://mern-backend-6o5r.onrender.com/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      setProducts(products.filter((product) => product._id !== id));
-    } catch (error) {
-      console.error("Error deleting product:", error.message);
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await axios.delete(`https://mern-backend-6o5r.onrender.com/${id}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //     });
+  //     setProducts(products.filter((product) => product._id !== id));
+  //   } catch (error) {
+  //     console.error("Error deleting product:", error.message);
+  //   }
+  // };
 
   // Fetch products on component mount
   useEffect(() => {
@@ -93,9 +97,12 @@ const Home = () => {
    dispatch(addToCart(item))
   }
 
+
+
   return (
     <div>
       <Navbar/>
+      
       <div className="wrapper">
       <div className="slidebar">
         <select onChange={handleSort}>
@@ -104,10 +111,13 @@ const Home = () => {
           <option value="2">title low to high</option>
           <option value="-2">title high to low</option>
         </select>
-        <div>
-          <Link className="lin" to="/add">   
-              <button>Add Products</button>     
-          </Link>
+        <Link className="lin" to="/add">
+        <div className="lists">
+           <AddCircleIcon className="icon"/><span> Add Products </span> 
+        </div>
+        </Link>
+        <div className="lists">
+          <DarkModeIcon className="icon" onClick={()=>{toogle(darkMode)}} /><spa>DarkMode</spa>
         </div>
       </div>
       <div className="container">
@@ -120,12 +130,6 @@ const Home = () => {
               <h2 className="product-title">{item.title}</h2>
               <h4 className="product-price">{item.price}</h4>
               <button onClick={()=>{addHandler(item)}} className="add-to-cart-btn">Add to Cart</button>
-              {/* <button
-                className="view-btn"
-                onClick={() => handleDelete(item._id)}
-              >
-                Delete
-              </button> */}
             </div>
           </div>
         ))}

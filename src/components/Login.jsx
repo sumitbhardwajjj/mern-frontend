@@ -33,12 +33,6 @@ const SignupComponent = () => {
                 localStorage.setItem('token', response.data.token);
                 navigate('/products')
             }
-           
-    
-            // Store the token in local storage
-         
-    
-            // Handle the token as needed, e.g., redirect user, etc.
     
         } catch (error) {
            
@@ -48,7 +42,7 @@ const SignupComponent = () => {
     
 
     return (
-        <div>       
+        <div className='login-form'>       
             <form onSubmit={handleSubmit}>
                 <h3>Login</h3>
                 <input 

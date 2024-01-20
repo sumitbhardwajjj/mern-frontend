@@ -1,37 +1,57 @@
-
-    body {
+body {
     font-family: sans-serif;
 }
 
-.wrapper{
-    display: flex;
+.wrapper {
+    padding-top: 100px;
 }
 
+
 .slidebar {
-    padding: 10px;
-    border-right: 1px solid gray;
+    display: none;
+    padding: 20px;
+    max-height: 300px; /* Set a maximum height for the slidebar */
+    overflow-y: auto;
+    height: 100vh;
+    border-right: 1px solid rgb(190, 189, 189) ; /* Add vertical scroll if content exceeds height */
   }
-  
-  select {
+
+  .lists {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+select {
     margin-right: 10px;
     padding: 8px;
     font-size: 14px;
-  }
-   .slidebar button{
-    width: 140px;
-    margin-top: 20px;
-    text-decoration: none;
-   }
-  /* Add additional styling as needed */
-  
+}
+
+.icon {
+    color: rgb(0, 132, 255);
+    padding-right: 10px;
+}
+
+.lists {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
 .container {
-    margin: 0px auto 0px auto;
+
+    position: fixed;
+    max-width: 100;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
+    overflow-y: auto; /* Add vertical scroll if content exceeds height */
+    max-height: 500px;
+    gap: 50px; /* Set a maximum height for the container */
+  }
+  
 
 .product-card {
     background-color: #fff;
@@ -41,9 +61,6 @@
     border: 1px solid #ccc;
     padding: 10px;
     width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
 }
 
 .product-image {
@@ -83,16 +100,12 @@
 }
 
 .add-to-cart-btn:hover,
-.view-btn:hover { 
+.view-btn:hover {
     opacity: 0.8;
 }
 
 @media(max-width:600px){
     .wrapper{
-        flex-direction: column;
-    }
-
-    .slidebar{
-        height: 50px;
+        padding-top: 280px;
     }
 }

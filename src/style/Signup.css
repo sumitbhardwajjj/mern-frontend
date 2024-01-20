@@ -1,3 +1,9 @@
+.login-form{
+  display: flex;
+  justify-content: center;
+}
+
+
 form {
     max-width: 300px;
     margin-top: 50px;
@@ -24,6 +30,7 @@ form {
   }
 
   .lin{
+    padding: 5px;
     color: white;
     text-decoration: none;
   }
@@ -33,7 +40,7 @@ form {
     color: rgb(0, 236, 253);
   }
   
-  Button {
+  .Button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -45,7 +52,7 @@ form {
     font-weight: 600;
   }
   
-  Button:hover {
+  .Button:hover {
     background-color: #0056b3; /* or your preferred hover effect color */
   }
   
