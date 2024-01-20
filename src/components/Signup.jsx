@@ -79,8 +79,7 @@ const SignupComponent = () => {
   theme="light"
   transition={Bounce}
 />
-
-        </div>
+   </div>
     );
 };
 

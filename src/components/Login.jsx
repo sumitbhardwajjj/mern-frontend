@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios';
 import '../style/Signup.css'
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 const SignupComponent = () => {
 
@@ -27,7 +28,7 @@ const SignupComponent = () => {
             console.log(response.data.token);
            
             if(response.data==="not"){
-                alert("user not exist")
+                toast.error("user not exist")
                
             }else{
                 localStorage.setItem('token', response.data.token);
@@ -63,7 +64,21 @@ const SignupComponent = () => {
                 />
                <Link className='lin' to='/signup'><div>New user ? <span>Register</span></div></Link>
                 <button className='Button' type="submit">Login</button>
-            </form> 
+            </form>
+            <ToastContainer
+  position="top-right"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="light"
+  transition={Bounce}
+/>
+
         </div>
     );
 };
